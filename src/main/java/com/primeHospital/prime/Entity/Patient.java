@@ -7,18 +7,16 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@AllArgsConstructor
-@NoArgsConstructor
+@Table(name="patients")
 @Getter
 @Setter
-@Table(name="patients")
 public class Patient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 private Long id;
-    @Column(nullable = false)
+    @Column(name = "first_name",nullable = false)
     private String firstName;
-    @Column(nullable = false)
+    @Column(name = "last_name")
     private String lastName;
     private String gender;
     private String dateOfBirth;
@@ -26,6 +24,7 @@ private Long id;
     private String email;
     private String address;
     private String emergencyContact;
+
 
 
 }
